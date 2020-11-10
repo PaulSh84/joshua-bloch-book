@@ -10,30 +10,30 @@ public class StreamVersusIterable {
     public static void main(String[] args) {
         // Won't compile, due to limitations on Java's type inference
 
-        for (ProcessHandle ph : ProcessHandle.allProcesses()::iterator) {
+//        for (ProcessHandle ph : ProcessHandle.allProcesses()::iterator) {
 
             // Process the process
 
-        }
+//        }
 
 
         // Hideous workaround to iterate over a stream
 
-        for  (ProcessHandle ph : (Iterable<ProcessHandle>)
-
-                ProcessHandle.allProcesses()::iterator);
-
-
-
-
-        for (ProcessHandle p : iterableOf(ProcessHandle.allProcesses())) {
+//        for  (ProcessHandle ph : (Iterable<ProcessHandle>)
+//
+//                ProcessHandle.allProcesses()::iterator);
+//
+//
+//
+//
+//        for (ProcessHandle p : iterableOf(ProcessHandle.allProcesses())) {
 
             // Process the process
 
-        }
-
-
-
+//        }
+//
+//
+//
     }
 
     // Adapter from  Stream<E> to Iterable<E>
@@ -52,10 +52,10 @@ public class StreamVersusIterable {
 
     }
 
-    /**
-     * The Collection interface is a subtype of Iterable and has a stream method,
-     * so it provides for both iteration and stream access. Therefore, Collection or an appropriate subtype
-     * is generally the best return type for a public, sequence-returning method.
+    /*
+      The Collection interface is a subtype of Iterable and has a stream method,
+      so it provides for both iteration and stream access. Therefore, Collection or an appropriate subtype
+      is generally the best return type for a public, sequence-returning method.
      */
 
 }
