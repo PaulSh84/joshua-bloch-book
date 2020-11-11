@@ -1,6 +1,7 @@
 package methods.returnemptycollectionsorarraysnotnulls;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Shop {
@@ -9,6 +10,8 @@ public class Shop {
 
 
     private final List<Cheese> cheesesInStock = new ArrayList<>();
+
+    public static final Cheese[] EMPTY_CHEESE_ARRAY = new Cheese[0];
 
 
     /**
@@ -22,6 +25,39 @@ public class Shop {
         return cheesesInStock.isEmpty() ? null
 
                 : new ArrayList<>(cheesesInStock);
+
+    }
+
+    //The right way to return a possibly empty collection
+
+    public List<Cheese> getCheesesTheRightWay() {
+
+        return new ArrayList<>(cheesesInStock);
+
+    }
+
+    // Optimization - avoids allocating empty collections
+
+    public List<Cheese> getCheesesOptimized() {
+
+        return cheesesInStock.isEmpty() ? Collections.emptyList()
+
+                : new ArrayList<>(cheesesInStock);
+
+    }
+
+    //The right way to return a possibly empty array
+
+    public Cheese[] getCheesesInArray() {
+
+        return cheesesInStock.toArray(new Cheese[0]);
+
+    }
+    // Optimization - avoids allocating empty arrays
+
+    public Cheese[] getCheesesInArrayOptimized() {
+
+        return cheesesInStock.toArray(EMPTY_CHEESE_ARRAY);
 
     }
 
