@@ -48,5 +48,6 @@ public class PreferredIdioms {
      - Parallel iteration: If you need to traverse multiple collections in parallel,
         then you need explicit control over the iterator or index variable
      */
+
     }
 }
