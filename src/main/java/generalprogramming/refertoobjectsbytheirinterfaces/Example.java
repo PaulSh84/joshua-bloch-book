@@ -21,5 +21,4 @@ public class Example {
     // fixed version
     Set<Son> sonSet3 = new LinkedHashSet<>();
 
-
 }
